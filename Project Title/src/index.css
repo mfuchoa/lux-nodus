@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Lux Palette — warm, minimal, trustworthy */
+
+    /* Sand background */
+    --background: 36 56% 96%;
+    --foreground: 19 47% 12%;
+
+    /* Card surfaces — slightly warmer than background */
+    --card: 36 40% 98%;
+    --card-foreground: 19 47% 12%;
+
+    /* Popover */
+    --popover: 36 40% 98%;
+    --popover-foreground: 19 47% 12%;
+
+    /* Primary — Terracotta #A0522D */
+    --primary: 19 58% 40%;
+    --primary-foreground: 36 56% 96%;
+
+    /* Secondary — lighter sand */
+    --secondary: 30 30% 92%;
+    --secondary-foreground: 19 47% 12%;
+
+    /* Muted — Warm gray #8A7A70 */
+    --muted: 30 20% 90%;
+    --muted-foreground: 23 11% 49%;
+
+    /* Accent — Moss green #3D5C35 */
+    --accent: 108 27% 28%;
+    --accent-foreground: 36 56% 96%;
+
+    /* Destructive */
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 36 56% 96%;
+
+    /* Borders — warm and subtle */
+    --border: 30 20% 88%;
+    --input: 30 20% 85%;
+    --ring: 19 58% 40%;
+
+    --radius: 0.375rem;
+
+    /* Sidebar */
+    --sidebar-background: 36 40% 97%;
+    --sidebar-foreground: 19 47% 12%;
+    --sidebar-primary: 19 58% 40%;
+    --sidebar-primary-foreground: 36 56% 96%;
+    --sidebar-accent: 108 27% 28%;
+    --sidebar-accent-foreground: 36 56% 96%;
+    --sidebar-border: 30 20% 88%;
+    --sidebar-ring: 19 58% 40%;
+
+    /* Custom tokens */
+    --warm-gray: 23 11% 49%;
+    --terracotta: 19 58% 40%;
+    --moss: 108 27% 28%;
+    --coffee: 19 47% 12%;
+    --sand: 36 56% 96%;
+    --sand-dark: 30 30% 90%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: hsl(var(--coffee));
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Lux utility classes */
+@layer components {
+  .lux-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .lux-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .lux-divider {
+    width: 100%;
+    height: 1px;
+    background-color: hsl(var(--border));
+  }
+
+  .lux-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--warm-gray));
+  }
+}
+
+/* Wallet button override to match Lux palette */
+.wallet-adapter-button {
+  background-color: hsl(19 58% 40%) !important;
+  color: hsl(36 56% 96%) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
+  height: 2.5rem !important;
+  padding: 0 1.25rem !important;
+  transition: opacity 0.2s ease !important;
+  letter-spacing: 0.01em !important;
+}
+
+.wallet-adapter-button:hover {
+  opacity: 0.88 !important;
+  background-color: hsl(19 58% 40%) !important;
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+  background-color: hsl(19 58% 36%) !important;
+}
+
+.wallet-adapter-button-trigger {
+  background-color: hsl(19 58% 40%) !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  background-color: hsl(36 40% 98%) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.wallet-adapter-modal-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  color: hsl(19 47% 12%) !important;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button {
+  background-color: transparent !important;
+  color: hsl(19 47% 12%) !important;
+  border: 1px solid hsl(30 20% 88%) !important;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button:hover {
+  background-color: hsl(30 30% 92%) !important;
+  opacity: 1 !important;
+}
+
+.wallet-adapter-modal-button-close {
+  background-color: hsl(30 30% 92%) !important;
+}
+
+.wallet-adapter-modal-button-close svg {
+  fill: hsl(19 47% 12%) !important;
+}
+
+/* Selection color */
+::selection {
+  background-color: hsl(19 58% 40% / 0.15);
+  color: hsl(19 47% 12%);
+}
