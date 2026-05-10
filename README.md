@@ -1,4 +1,4 @@
-# Lux by Nodus
+# Lux
 
 Peer-validated protocol turning lived experience from neurodivergent families into a community-owned living gap map.
 
